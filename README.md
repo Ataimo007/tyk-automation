@@ -136,8 +136,8 @@ This deletes APIs matching the provided name prefix.
 
 ---
 
-## 🔐 Security Notes
+<!-- ## 🔐 Security Notes
 
 - Do NOT commit `.env`
 - Do NOT commit API keys
-- Rotate keys if exposed
+- Rotate keys if exposed -->
