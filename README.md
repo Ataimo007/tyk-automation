@@ -11,7 +11,7 @@ automation/
 │
 ├── api/
 │   ├── __init__.py
-│   └── oas_bulk_jwt_manager.py   # API creation & catalogue logic
+│   └── oas_bulk_jwt_manager.py   # API creation & product logic
 │
 ├── config/
 │   ├── __init__.py
@@ -112,16 +112,16 @@ python main.py \
 
 ---
 
-### Create APIs With Catalogue Payload
+### Create APIs With product Payload
 
 ```bash
 python main.py \
   --api-name demo \
-  --number 2 \
+  --number 20 \
   --jwks-uri https://example.com/jwks.json \
-  --catalogue-payload \
+  --product-payload \
   --provider-id 123 \
-  --templates User,Admin
+  --templates User
 ```
 
 ---

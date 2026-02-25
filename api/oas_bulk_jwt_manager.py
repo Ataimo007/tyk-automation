@@ -106,7 +106,7 @@ def generate_oas_api(api_name, index, jwks_uri):
         }
     }
 
-def create_apis_with_catalogue_payload_render(api_name, number, jwks_uri, provider_id, templates):
+def create_apis_with_product_payload_render(api_name, number, jwks_uri, provider_id, templates):
 
     api_details = []
 
@@ -136,11 +136,11 @@ def create_apis_with_catalogue_payload_render(api_name, number, jwks_uri, provid
             print(f"❌ Failed: {api_name}-{i}")
             print(response.status_code, response.text)
 
-    # 👇 compile catalogue after loop
-    catalogue = compile_catalogue_payload(api_details, api_name, provider_id, templates)
+    # 👇 compile product after loop
+    product = compile_product_payload(api_details, api_name, provider_id, templates)
 
-    print("\n🧾 Compiled catalogue payload (dry run):\n")
-    print(json.dumps(catalogue, indent=4))
+    print("\n🧾 Compiled product payload (dry run):\n")
+    print(json.dumps(product, indent=4))
 
 def create_apis(api_name, number, jwks_uri):
 
@@ -170,7 +170,7 @@ def gather_api_details(api_details, api_id, api_name):
         "OASUrl": "https://httpbin.org/spec.json"
     })
 
-def compile_catalogue_payload(api_details, api_name, provider_id, templates):
+def compile_product_payload(api_details, api_name, provider_id, templates):
 
     return {
         "APIDetails": api_details,

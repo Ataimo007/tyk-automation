@@ -1,5 +1,5 @@
 import argparse
-from api.oas_bulk_jwt_manager import create_apis, create_apis_with_catalogue_payload_render, delete_apis
+from api.oas_bulk_jwt_manager import create_apis, create_apis_with_product_payload_render, delete_apis
 
 def main():
     parser = argparse.ArgumentParser(
@@ -11,10 +11,10 @@ def main():
     parser.add_argument("--jwks-uri")
     parser.add_argument("--delete", action="store_true")
 
-    # catalogue render args
+    # product render args
     parser.add_argument("--provider-id")
     parser.add_argument("--templates")
-    parser.add_argument("--catalogue-payload", action="store_true")
+    parser.add_argument("--product-payload", action="store_true")
 
     args = parser.parse_args()
 
@@ -22,13 +22,13 @@ def main():
         delete_apis(args.api_name)
         return
 
-    if args.catalogue_payload:
+    if args.product_payload:
 
         if not args.provider_id or not args.templates:
-            print("❌ --provider-id and --template-id are required for catalogue payload")
+            print("❌ --provider-id and --template-id are required for product payload")
             return
 
-        create_apis_with_catalogue_payload_render(
+        create_apis_with_product_payload_render(
             api_name=args.api_name,
             number=args.number,
             jwks_uri=args.jwks_uri,
