@@ -1,0 +1,37 @@
+# ==============================
+# Python
+# ==============================
+
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Virtual Environment
+venv/
+.env/
+
+# Environment Variables
+.env
+.env.*
+!.env.example
+
+# macOS
+.DS_Store
+__MACOSX/
+
+# IDE
+.vscode/
+.idea/
+
+# Logs
+*.log
+
+# Distribution
+*.egg-info/
+dist/
+build/
+
+# Site-packages (safety)
+site-packages/
+*.dist-info/
